@@ -222,6 +222,18 @@ print Paint["  _    _      _                            _
                            \n", :white, :bold, :bright]
     sleep(3)
 	end
+
+    def self.loser
+    print Paint[
+"    _____                         ____
+  / ____|                       / __ \
+ | |  __  __ _ _ __ ___   ___  | |  | |_   _____ _ __
+ | | |_ |/ _` | '_ ` _ \\ / _ \\ | |  | \\ \\ / / _ \\ '__|
+ | |__| | (_| | | | | | |  __/ | |__| |\\ V /  __/ |
+  \\_____|\\__,_|_| |_| |_|\\___|  \\____/  \\_/ \\___|_|
+
+                                                      \n", :white, :bold, :bright]
+    end
 end
 
 module Screens
@@ -241,7 +253,7 @@ module Screens
     print  Paint["     |         |    \n","#663300", :bold]
     print  Paint["     |         |    \n","#663300", :bold]
     print  Paint["     |        (_)     ","#663300", :bold] + Paint["                 [1] New Game\n", :white, :bold, :bright]
-    print  Paint["     |              \n","#663300", :bold] 
+    print  Paint["     |              \n","#663300", :bold]
 		print  Paint["     |                ","#663300", :bold] + Paint["                 [2] High Scores\n", :white, :bold, :bright]
     print  Paint["     |              \n","#663300", :bold]
     print  Paint["     |                ","#663300", :bold] + Paint["                 [3] Exit\n", :white, :bold, :bright]
@@ -259,13 +271,13 @@ module Screens
 		def self.highscores_screen
 		print "\n" * 3
 		print Paint[
-"  _    _ _       _        _____                         
- | |  | (_)     | |      / ____|                        
- | |__| |_  __ _| |__   | (___   ___ ___  _ __ ___  ___ 
+"  _    _ _       _        _____
+ | |  | (_)     | |      / ____|
+ | |__| |_  __ _| |__   | (___   ___ ___  _ __ ___  ___
  |  __  | |/ _` | '_ \\   \\___ \\ / __/ _ \\| '__/ _ \\/ __|
  | |  | | | (_| | | | |  ____) | (_| (_) | | |  __/\\__ \\
  |_|  |_|_|\\__, |_| |_| |_____/ \\___\\___/|_|  \\___||___/
-            __/ |                                       
+            __/ |
            |___/                                       \n", "gold", :bold, :bright]
     print "\n" * 3
     print Paint[" _________________________________________________________\n","gold", :bold, :bright]
