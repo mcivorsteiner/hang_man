@@ -1,8 +1,8 @@
 require_relative '../config'
 
-class CreateHiScores < ActiveRecord::Migration
+class CreateHighScores < ActiveRecord::Migration
 	def change
-		create_table :scores do |t|
+		create_table :high_scores do |t|
 			t.integer :score
 			t.string :name
 		end

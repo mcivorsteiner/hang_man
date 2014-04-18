@@ -6,15 +6,13 @@ class InputParser
       when "1"
         Controller.init_game
       when "2"
-        Display.high_scores
+        HighScores.display
       when "3"
-    #    Display.exit
+        Display.exit
       when "y"
         Controller.init_game
       when "n"
-  #      Display.exit
-      else
-   #     Display.invalid_input
+        Display.exit
     end
   end
 end

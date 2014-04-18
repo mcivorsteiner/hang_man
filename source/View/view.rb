@@ -27,6 +27,10 @@ class Display
     Screens.menu_screen
 	end
 
+  def self.exit
+    puts "Good bye!"
+  end
+
   def self.high_scores
     Screens.highscores_screen
   end
@@ -124,21 +128,3 @@ class Display
     HangedMen.dead_guy
 	end
 end
-
-hanged_man = Display.new
-# Display.intro
-# Display.menu
-# Display.high_scores
-# Display.scores(1,"Maggy",22)
-# Display.scores(2,"Leo",5)
-# Display.scores(3,"Elliott",1)
-# Display.scores_last(3,"Elliott",1)
-# hanged_man.win
-Display.lose
-# Display.hangman_0
-# Display.hangman_1
-# Display.hangman_2
-# Display.hangman_3
-# Display.hangman_4
-# Display.hangman_5
-# Display.hangman_6

@@ -6,12 +6,14 @@ require_relative 'game_control'
 require_relative 'input_control'
 require_relative '../models/used_words'
 require_relative 'game_factory'
+require_relative 'high_scores'
 
 class Controller
   def run
     Display.intro
     Display.menu
-    send(InputParser.test(gets.chomp))
+
+    InputParser.test(gets.chomp)
   end
 
   def self.init_game
@@ -19,4 +21,5 @@ class Controller
   end
 
 end
+
 
