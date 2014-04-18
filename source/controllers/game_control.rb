@@ -1,5 +1,5 @@
 # Game control
-require_relative 'controller'
+
 
 class GameControl
   def initialize(game)
@@ -12,8 +12,7 @@ class GameControl
       Display.guess(@game.current_word_status)
       Display.guessed_letters(@game.guessed_letters)
       Display.remaining_guesses(6 - @game.false_guesses)
-      # Display.guess_input
-      puts "ENTER YOUR NEXT GUESS: "
+      Display.guess_input
       @game.check_letter(gets.chomp.downcase) ? Display.correct : Display.incorrect
     end
     @game.solved? ? Display.win : Display.lose
@@ -26,14 +25,3 @@ class GameControl
 
 end
 
-class GameFactory
-
-  def self.new_game
-    Game.new(next_word)
-  end
-
-  private
-
-  def self.next_word
-  end
-end
