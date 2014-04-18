@@ -27,6 +27,10 @@ class Display
     Screens.menu_screen
 	end
 
+  def self.exit
+    puts "Good bye!"
+  end
+
   def self.high_scores
     Screens.highscores_screen
   end
@@ -37,7 +41,6 @@ class Display
 
   def self.scores_last(num,name,score)
     print Paint["\n| #{num.to_s.ljust(10)}  |     #{name.ljust(10)}            |    #{score.to_s.ljust(10)} |", "gold", :bright, :bold, :underline]
-    puts
   end
 
 	def self.guess(string)

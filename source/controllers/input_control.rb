@@ -8,13 +8,11 @@ class InputParser
       when "2"
         HighScores.display
       when "3"
-    #    Display.exit
+        Display.exit
       when "y"
         Controller.init_game
       when "n"
-  #      Display.exit
-      else
-   #     Display.invalid_input
+        Display.exit
     end
   end
 end
