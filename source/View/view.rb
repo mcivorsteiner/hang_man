@@ -37,6 +37,7 @@ class Display
 
   def self.scores_last(num,name,score)
     print Paint["\n| #{num.to_s.ljust(10)}  |     #{name.ljust(10)}            |    #{score.to_s.ljust(10)} |", "gold", :bright, :bold, :underline]
+    puts
   end
 
 	def self.guess(string)
@@ -120,20 +121,4 @@ class Display
 	end
 end
 
-hanged_man = Display.new
-Display.intro
-Display.menu
-# Display.high_scores
-# Display.scores(1,"Maggy",22)
-# Display.scores(2,"Leo",5)
-# Display.scores(3,"Elliott",1)
-# Display.scores_last(3,"Elliott",1)
-# hanged_man.win
-# hanged_man.lose
-# Display.hangman_0
-# Display.hangman_1
-# Display.hangman_2
-# Display.hangman_3
-# Display.hangman_4
-# Display.hangman_5
-# Display.hangman_6
+

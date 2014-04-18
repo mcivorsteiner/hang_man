@@ -6,7 +6,7 @@ class InputParser
       when "1"
         Controller.init_game
       when "2"
-        Display.high_scores
+        HighScores.display
       when "3"
     #    Display.exit
       when "y"
