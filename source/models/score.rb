@@ -1,4 +1,4 @@
 require_relative '../db/config'
-class Word < ActiveRecord::Base
+class Score < ActiveRecord::Base
 
 end
