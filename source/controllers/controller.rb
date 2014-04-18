@@ -1,49 +1,36 @@
 require_relative '../models/game'
 require_relative 'screen_utils'
 require_relative '../View/view'
+require_relative '../db/config'
+require_relative 'game_control'
+require_relative 'input_control'
+require_relative '../models/used_words'
 
 class Controller
   def initialize
-    @used_words = []
-  end
-
+    @used_words
   def run
     Display.intro
     Display.menu
-    input = gets.chomp
-    if input == ""
-      start_game
-    end
-
-
+    send(InputParser.test(gets.chomp))
   end
 
-  def start_game
-    # Game.new(get_word)
-    game = Game.new("hello")
-    until game.solved? || game.false_guesses >= 6
-      Display.send("hangman_#{game.false_guesses}")
-      Display.guess(game.current_word_status)
-      Display.guessed_letters(game.guessed_letters)
-      Display.remaining_guesses(6 - game.false_guesses)
-      # Display.guess_input
-      puts "ENTER YOUR NEXT GUESS: "
-      game.check_letter(gets.chomp.downcase) ? Display.correct : Display.incorrect
-    end
-    game.solved? ? Display.win : Display.lose
+  def self.init_game
+    GameControl.new(Game.new(Controller.get_word)).run_game
   end
 
   def what_hangman?
     game.false_guesses
   end
 
-  def get_word
-    word = Word.all.sample
-    while @used_words.include?(word)
-      word = Word.all.sample
+  def self.get_word
+    word = Word.all.sample.word
+    while UsedWords.list.include?(word)
+      word = Word.all.sample.word
     end
-    @used_words << word
+    UsedWords.add_words(word)
     word
   end
+
 end
 
