@@ -74,6 +74,11 @@ class Display
     Display.move_to_home!
     Display.clear_screen!
     Messages.loser
+    print Paint["        Would you like to try again?         \n", :white, :bold, :bright]
+    print "\n" * 3
+    print Paint["---------------------------------------------\n", :white, :bold, :bright]
+    print Paint["        Enter y for Yes, n for No            \n", :white, :bold, :bright, :blink]
+    print Paint["---------------------------------------------\n", :white, :bold, :bright]
     Display.hangman_6
     print "\n" * 8
 	end
@@ -120,5 +125,3 @@ class Display
     HangedMen.dead_guy
 	end
 end
-
-
