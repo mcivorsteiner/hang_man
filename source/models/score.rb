@@ -1,5 +1,5 @@
 require_relative '../db/config'
 class Score < ActiveRecord::Base
-	validates :name, length: {maximum: 10}
+	validates :name, length: {in: 2..10}
 
 end
