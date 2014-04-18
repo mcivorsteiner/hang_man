@@ -1,4 +1,6 @@
 class Game
+  attr_reader :false_guesses, :guessed_letters
+
   def initialize(word)
     @word = word
     @solved = false
