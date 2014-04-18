@@ -73,6 +73,11 @@ class Display
     Display.move_to_home!
     Display.clear_screen!
     Messages.loser
+    print Paint["        Would you like to try again?         \n", :white, :bold, :bright]
+    print "\n" * 3
+    print Paint["---------------------------------------------\n", :white, :bold, :bright]
+    print Paint["        Enter y for Yes, n for No            \n", :white, :bold, :bright, :blink]
+    print Paint["---------------------------------------------\n", :white, :bold, :bright]
     Display.hangman_6
     print "\n" * 8
 	end
@@ -121,15 +126,15 @@ class Display
 end
 
 hanged_man = Display.new
-Display.intro
-Display.menu
+# Display.intro
+# Display.menu
 # Display.high_scores
 # Display.scores(1,"Maggy",22)
 # Display.scores(2,"Leo",5)
 # Display.scores(3,"Elliott",1)
 # Display.scores_last(3,"Elliott",1)
 # hanged_man.win
-# hanged_man.lose
+Display.lose
 # Display.hangman_0
 # Display.hangman_1
 # Display.hangman_2
