@@ -25,12 +25,8 @@ class Game
   def current_word_status
     word_string = ''
     @word.split('').each do |letter|
-      if @guessed_letters.include?(letter)
-        word_string << letter
-      else
-        word_string << '_'
-      end
-        word_string << ' '
+      @guessed_letters.include?(letter) ? word_string << letter : word_string << '_'
+      word_string << ' '
     end
     word_string.strip
   end

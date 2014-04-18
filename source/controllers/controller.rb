@@ -1,5 +1,6 @@
 require_relative '../models/game'
 require_relative 'screen_utils'
+require_relative '../View/view'
 
 class Controller
   def initialize
@@ -10,32 +11,30 @@ class Controller
     Display.intro
     Display.menu
     input = gets.chomp
-    case input
-      when 1
-        Controller.start_game
-      when 2
-        Display.highscores
-      when 3
-        Display.exit
+    if input == ""
+      start_game
     end
+
+
   end
 
-  def self.start_game
-    Game.new(get_word)
-    until Game.solved? || Game.false_guesses > 6
-      Screen.clear_screen!
-      Screen.move_to_home!
-      Display.send("hangman_#{what_hangman?}")
-      Display.guess(Game.current_word_status)
-      Display.guessed_letters(Game.guessed_letters)
-      Display.guess_input
-      Game.check_letter(gets.chomp) ? Display.correct : Display.incorrect
+  def start_game
+    # Game.new(get_word)
+    game = Game.new("hello")
+    until game.solved? || game.false_guesses >= 6
+      Display.send("hangman_#{game.false_guesses}")
+      Display.guess(game.current_word_status)
+      Display.guessed_letters(game.guessed_letters)
+      Display.remaining_guesses(6 - game.false_guesses)
+      # Display.guess_input
+      puts "ENTER YOUR NEXT GUESS: "
+      game.check_letter(gets.chomp.downcase) ? Display.correct : Display.incorrect
     end
-    Game.solved? ? Display.win : Display.lose
+    game.solved? ? Display.win : Display.lose
   end
 
   def what_hangman?
-    Game.false_guesses + 1
+    game.false_guesses
   end
 
   def get_word
