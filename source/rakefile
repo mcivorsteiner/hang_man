@@ -7,11 +7,13 @@ require_relative 'db/data/seeds'
 desc "create the database"
 task "db:create" do
   touch 'db/data/words.db'
+
 end
 
 desc "drop the database"
 task "db:drop" do
   rm_f 'db/data/words.db'
+
 end
 
 task "db:dir" do

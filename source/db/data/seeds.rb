@@ -1,4 +1,4 @@
-require_relative '../../app/models/word'
+require_relative '../../models/word'
 require 'random_word_generator'
 
 module TaskSeeder
